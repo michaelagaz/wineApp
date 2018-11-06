@@ -1,0 +1,41 @@
+<img src="images/kisspng-red-wine-cabernet-franc-distilled-beverage-caberne-red-wine-red-wine-background-taobao-material-5a972f3c204664.5547723415198574681322.png">
+<div class="login-container">
+  <md-content>
+    <md-content>
+      <div  class="login-input-container">
+        <md-input-container>
+          <label>Username</label>
+          <input ng-model="user.username">
+        </md-input-container>
+
+        <md-input-container>
+          <label>Email</label>
+          <input ng-model="user.pwd" type="password">
+        </md-input-container>
+
+        <md-button class="md-raised" ng-click="submit(user)">Log in</md-button>
+      </div>
+    </md-content>
+    <!-- these require actual routing with ui-router or ng-route, so they
+    won't work in the demo
+    <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
+    <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
+    You can also add options for the <code>ui-sref-opts</code> attribute.
+    <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
+      Page Six
+    </md-nav-item>
+    -->
+
+
+
+    <!-- Your application bootstrap  -->
+    <!--<script type="text/javascript">-->
+    <!--/**-->
+    <!--* You must include the dependency on 'ngMaterial'-->
+    <!--*/-->
+    <!--angular.module('BlankApp', ['ngMaterial', 'ngMessages']);-->
+    <!--</script>-->
+
+    <script src="login.js"></script>
+    <!--<script src="login/login.js"></script>-->
+</div>

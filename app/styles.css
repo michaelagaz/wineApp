@@ -1,0 +1,55 @@
+img{
+    position: relative;
+}
+
+md-content{
+    border-radius: 10px;
+    background-color: rgba(20, 9, 10, 0.3);
+    overflow: hidden;
+    height: 250px;
+}
+
+
+.login-container{
+    position: absolute;
+    height: 100%;
+    top: 25%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /*margin: 0 auto;*/
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: 5;
+    border-radius: 10px;
+    /*background-color: rgba(90,98,104, 0.3);*/
+}
+
+.login-input-container{
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    /*background-color: rgba(90,98,104, 0.3);*/
+    border-radius: 10px;
+
+    z-index: 5;
+}
+
+input{
+    color: #a50316;
+}
+
+.md-raised{
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #895f2d;
+}
