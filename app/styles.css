@@ -2,14 +2,6 @@ img{
     position: relative;
 }
 
-md-content{
-    border-radius: 10px;
-    background-color: rgba(20, 9, 10, 0.3);
-    overflow: hidden;
-    height: 250px;
-}
-
-
 .login-container{
     position: absolute;
     height: 100%;
@@ -27,6 +19,28 @@ md-content{
     /*background-color: rgba(90,98,104, 0.3);*/
 }
 
+.login-container md-content{
+    border-radius: 10px;
+    background-color: rgba(20, 9, 10, 0.3);
+    overflow: hidden;
+    height: 250px;
+}
+.edit-button{
+    width: 20px;
+    height: 27px;
+    fill: #a50316;
+    cursor: pointer;
+}
+.edit-button:hover{
+    width: 20px;
+    height: 27px;
+    fill: #630311;
+    cursor: pointer;
+}
+
+.detail-header{
+    padding-left: 16px;
+}
 .login-input-container{
     height: 100%;
     width: 500px;
@@ -52,4 +66,8 @@ input{
     justify-content: center;
     align-content: center;
     background-color: #895f2d;
+}
+
+md-toolbar{
+    background-color: #a50316 !important;
 }

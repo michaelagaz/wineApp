@@ -1,0 +1,18 @@
+<md-content class="md-padding">
+    <h1 class="md-display-2">Vzorky {{item.id}}</h1>
+    <md-divider></md-divider>
+    <md-list>
+        <md-list-item class="md-2-line" ng-repeat="item in items">
+            <div class="md-list-item-text" layout="row">
+                <div flex="50">{{item.name}}</div>
+                <md-checkbox ng-change="onCheckboxChange($index)" flex="50" ng-model="item.checkbox">
+                </md-checkbox>
+
+            </div>
+        </md-list-item>
+    </md-list>
+    <script src="detail.js"></script>
+</md-content>
+<!--
+Copyright 2016-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be found in the LICENSE file at https://material.angularjs.org

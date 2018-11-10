@@ -18,8 +18,8 @@ app.controller('LoginCtrl', ['$scope', '$location', function($scope, $location) 
     };
 
     $scope.submit = function (user) {
-        console.log('click');
-        if (user === $scope.user2) {
+        console.log(user);
+        if (user.username === $scope.user2.username && user.pwd === $scope.user2.pwd) {
             $location.path('/list');
         }
     };

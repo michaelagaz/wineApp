@@ -1,7 +1,7 @@
 'use strict';
- angular.module("myApp", ['ngMaterial', "ngRoute", 'ngMessages'])
+angular.module("myApp", ['ngMaterial', "ngRoute", 'ngMessages'])
 
-    // $routeProvider,
+// $routeProvider,
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when("/", {
@@ -13,7 +13,12 @@
                 controller: "ListCtrl",
                 templateUrl: "/list/list.html",
                 controllerAs: 'vm'
-            });
+            })
+            .when("/detail/:id", {
+                controller: "DetailCtrl",
+                templateUrl: "/detail/detail.html",
+                controllerAs: 'vm'
+            })
         $locationProvider.html5Mode(true);
     });
 

@@ -1,24 +1,41 @@
 <div>
     <md-content>
         <md-tabs md-dynamic-height="" md-border-bottom="">
-            <md-tab label="one">
+            <md-tab label="Vzorky">
                 <md-content class="md-padding">
-                    <h1 class="md-display-2">Tab One</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+                    <h1 class="md-display-2">Vzorky</h1>
+                    <md-list>
+                        <md-list-item class="md-2-line" ng-repeat="item in items">
+                            <div class="md-list-item-text" layout="row">
+                                <div flex="20">{{item.title}}</div>
+                                <div flex="20">{{item.color}}</div>
+                                <div flex="20">{{item.author}}</div>
+                                <div flex="20">{{item.description}}</div>
+                                <div ng-click="onClick($index)">
+                                <svg class="edit-button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 528.899 528.899" xml:space="preserve">
+<g>
+	<path d="M328.883,89.125l107.59,107.589l-272.34,272.34L56.604,361.465L328.883,89.125z M518.113,63.177l-47.981-47.981   c-18.543-18.543-48.653-18.543-67.259,0l-45.961,45.961l107.59,107.59l53.611-53.611   C532.495,100.753,532.495,77.559,518.113,63.177z M0.3,512.69c-1.958,8.812,5.998,16.708,14.811,14.565l119.891-29.069   L27.473,390.597L0.3,512.69z"/>
+</g>
+</svg>
+                            </div>
+                            </div>
+                        </md-list-item>
+                    </md-list>
                 </md-content>
             </md-tab>
-            <md-tab label="two">
+            <md-tab label="Konfigurácia">
                 <md-content class="md-padding">
-                    <h1 class="md-display-2">Tab Two</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
-                    <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
-                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
-                </md-content>
-            </md-tab>
-            <md-tab label="three">
-                <md-content class="md-padding">
-                    <h1 class="md-display-2">Tab Three</h1>
-                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                    <h1 class="md-display-2">Konfigurácia</h1>
+                    <md-list>
+                        <md-list-item class="md-2-line" ng-repeat="item in items">
+                            <div class="md-list-item-text" layout="row">
+                                <md-input-container>
+                                    <label>Name</label>
+                                    <input ng-model="user.value">
+                                </md-input-container>
+                            </div>
+                        </md-list-item>
+                    </md-list>
                 </md-content>
             </md-tab>
         </md-tabs>
