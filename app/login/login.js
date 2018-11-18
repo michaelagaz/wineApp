@@ -1,6 +1,6 @@
 'use strict';
 
-var app =angular.module('myApp');
+var app = angular.module('myApp');
 
 // .config(['$routeProvider', function($routeProvider) {
 //   $routeProvider.when('/login', {
@@ -9,7 +9,7 @@ var app =angular.module('myApp');
 //   });
 // }])
 
-app.controller('LoginCtrl', ['$scope', '$location', function($scope, $location) {
+app.controller('LoginCtrl', ['$scope', '$location', function ($scope, $location) {
     // var vm = this;
     console.log($scope);
     $scope.user2 = {
@@ -17,11 +17,32 @@ app.controller('LoginCtrl', ['$scope', '$location', function($scope, $location) 
         pwd: 'test'
     };
 
+    $scope.exhibits = [
+        {
+            name: "Lincansky dzbanek",
+            year: 2018
+        },
+
+        {
+            name: "Lincansky dzbanek 2",
+            year: 2017
+        }];
+
+    $scope.showExhibitions = false;
+
     $scope.submit = function (user) {
         console.log(user);
         if (user.username === $scope.user2.username && user.pwd === $scope.user2.pwd) {
-            $location.path('/list');
+            $scope.showExhibitions = true;
+            // $location.path('/list');
         }
+    };
+    $scope.chooseExhibition = function () {
+        // console.log(user);
+        // if (user.username === $scope.user2.username && user.pwd === $scope.user2.pwd) {
+        //     $scope.showExhibitions = true;
+            $location.path('/list');
+        // }
     };
 
 }]);

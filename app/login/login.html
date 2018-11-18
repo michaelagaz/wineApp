@@ -1,19 +1,23 @@
 <img src="images/kisspng-red-wine-cabernet-franc-distilled-beverage-caberne-red-wine-red-wine-background-taobao-material-5a972f3c204664.5547723415198574681322.png">
 <div class="login-container">
-  <md-content>
     <md-content>
       <div  class="login-input-container">
         <md-input-container>
           <label>Username</label>
-          <input ng-model="user.username">
+          <input ng-disabled="showExhibitions" ng-model="user.username">
         </md-input-container>
 
         <md-input-container>
           <label>Email</label>
-          <input ng-model="user.pwd" type="password">
+          <input ng-disabled="showExhibitions" ng-model="user.pwd" type="password">
         </md-input-container>
 
-        <md-button class="md-raised" ng-click="submit(user)">Log in</md-button>
+        <md-button ng-show="!showExhibitions" class="md-raised" ng-click="submit(user)">Log in</md-button>
+        <md-input-container ng-show="showExhibitions">
+          <md-select ng-model="exhibition" ng-change="chooseExhibition()" placeholder="Vyberte výstavu">
+            <md-option ng-value="opt" ng-repeat="opt in exhibits">{{ opt.name +'\t'+opt.year}}</md-option>
+          </md-select>
+        </md-input-container>
       </div>
     </md-content>
     <!-- these require actual routing with ui-router or ng-route, so they

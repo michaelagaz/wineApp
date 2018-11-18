@@ -1,8 +1,12 @@
-img{
+*{
+    box-sizing: border-box;
+}
+
+img {
     position: relative;
 }
 
-.login-container{
+.login-container {
     position: absolute;
     height: 100%;
     top: 25%;
@@ -19,29 +23,72 @@ img{
     /*background-color: rgba(90,98,104, 0.3);*/
 }
 
-.login-container md-content{
+.login-container md-content {
     border-radius: 10px;
     background-color: rgba(20, 9, 10, 0.3);
     overflow: hidden;
-    height: 250px;
+    height: 320px;
 }
-.edit-button{
+
+.login-container md-input-container {
+    color: #630311;
+    width: 250px;
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: max-height 0.3s ease-out;
+}
+
+.collapse-header {
+    background-color: #af726b;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    border: 0;
+    box-sizing: border-box;
+}
+.collapse-header:hover{
+    cursor: pointer;
+}
+
+.collapse-icon {
+    fill: #5c5c5c;
+    height: 20px;
+    transition: transform 0.3s ease-out;
+}
+.collapse-icon.collapse-rotate{
+    transform: rotate(180deg);
+}
+.collapse {
+    max-height: 100%;
+    box-sizing: border-box;
+    /*background-color: #efefef;*/
+}
+
+.edit-button {
     width: 20px;
     height: 27px;
     fill: #a50316;
     cursor: pointer;
 }
-.edit-button:hover{
+
+.edit-button:hover {
     width: 20px;
     height: 27px;
     fill: #630311;
     cursor: pointer;
 }
 
-.detail-header{
+.detail-header {
     padding-left: 16px;
 }
-.login-input-container{
+
+.login-input-container {
     height: 100%;
     width: 500px;
     display: flex;
@@ -56,11 +103,11 @@ img{
     z-index: 5;
 }
 
-input{
+input {
     color: #a50316;
 }
 
-.md-raised{
+.md-raised {
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -68,6 +115,6 @@ input{
     background-color: #895f2d;
 }
 
-md-toolbar{
+md-toolbar {
     background-color: #a50316 !important;
 }
