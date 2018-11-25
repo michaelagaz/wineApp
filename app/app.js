@@ -4,12 +4,12 @@ angular.module("myApp", ['ngMaterial', "ngRoute", 'ngMessages'])
 // $routeProvider,
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
+            // .when("/", {
+            //     controller: "LoginCtrl",
+            //     templateUrl: "/login/login.html",
+            //     controllerAs: 'vm'
+            // })
             .when("/", {
-                controller: "LoginCtrl",
-                templateUrl: "/login/login.html",
-                controllerAs: 'vm'
-            })
-            .when("/list", {
                 controller: "ListCtrl",
                 templateUrl: "/list/list.html",
                 controllerAs: 'vm'
@@ -20,6 +20,9 @@ angular.module("myApp", ['ngMaterial', "ngRoute", 'ngMessages'])
                 controllerAs: 'vm'
             })
         $locationProvider.html5Mode(true);
+    })
+    .listen(8000, '0.0.0.0', function () {
+        console.log('Listening to port:  ' + 8000);
     });
 
 // function AppCtrl($scope, $location) {

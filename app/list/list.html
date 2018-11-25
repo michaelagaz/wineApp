@@ -1,24 +1,28 @@
-<div>
+<div ng-init="init()">
     <md-content>
         <md-tabs md-dynamic-height="" md-border-bottom="">
-            <md-tab label="Vzorky">
+            <md-tab label="Hodnotenie">
                 <md-content class="md-padding">
-                    <h1 class="md-display-2">Vzorky</h1>
-                    <div class="collapse-header" ng-init="false" ng-model="collapsible1" ng-click="collapsible1 = !collapsible1">
-                        <h4>Vzorky</h4>
-                        <svg ng-class="collapsible1? 'collapse-icon collapse-rotate': 'collapse-icon'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129">
-                            <g>
-                                <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
-                            </g>
-                        </svg>
-                    </div>
+                    <h1 class="md-display-2">Hodnotenie</h1>
+                    <div ng-repeat="item in items">
+                        <div class="collapse-header" ng-init="false" ng-model="collapsible1"
+                             ng-click="collapsible1 = !collapsible1">
+                            <h4>Vzorka č. {{item.id}}</h4>
+                            <svg ng-class="collapsible1? 'collapse-icon collapse-rotate': 'collapse-icon'"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 version="1.1" viewBox="0 0 129 129" enable-background="new 0 0 129 129">
+                                <g>
+                                    <path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
+                                </g>
+                            </svg>
+                        </div>
                         <md-list ng-class="collapsible1 ? 'collapsible-content collapse': 'collapsible-content'">
-                            <md-list-item class="md-2-line" ng-repeat="item in items">
+                            <md-list-item class="md-2-line" ng-repeat="itemList in item.list">
                                 <div class="md-list-item-text" layout="row">
-                                    <div flex="20">{{item.title}}</div>
-                                    <div flex="20">{{item.color}}</div>
-                                    <div flex="20">{{item.author}}</div>
-                                    <div flex="20">{{item.description}}</div>
+                                    <div flex="20">{{itemList.title}}</div>
+                                    <div flex="20">{{itemList.color}}</div>
+                                    <div flex="20">{{itemList.author}}</div>
+                                    <div flex="20">{{itemList.description}}</div>
                                     <div ng-click="onClick($index)">
                                         <svg class="edit-button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 528.899 528.899" xml:space="preserve">
 <g>
@@ -29,6 +33,7 @@
                                 </div>
                             </md-list-item>
                         </md-list>
+                    </div>
                 </md-content>
             </md-tab>
             <md-tab label="Konfigurácia">
@@ -48,14 +53,37 @@
             </md-tab>
             <md-tab label="Report">
                 <md-content class="md-padding">
-                    <h1 class="md-display-2">Konfigurácia</h1>
-                    <md-list>
-                        <md-list-item class="md-2-line" ng-repeat="item in items">
-                            <div class="md-list-item-text">
-                                <md-input-container>
-                                    <label>Name</label>
-                                    <input ng-model="user.value">
-                                </md-input-container>
+                    <div>
+                        <h1 class="md-display-2">Report</h1>
+                        <md-button>Excel Export</md-button>
+                    </div>
+                    <md-list class="report">
+                        <div class="report-header">
+                            <div flex="10">
+                                <md-checkbox ng-model="selectAll" ng-change="checkAll()"></md-checkbox>
+                            </div>
+                            <h4 flex="10">Title</h4>
+                            <h4 flex="10">Color</h4>
+                            <h4 flex="10">Author</h4>
+                            <h4 flex="10">Description</h4>
+                        </div>
+                        <md-divider></md-divider>
+                        <md-list-item class="md-2-line" ng-repeat="item in allItems">
+                            <div class="md-list-item-text list-row" layout="row">
+                                <div flex="10">
+                                    <md-checkbox ng-model="item.checked" ng-change="selectAllCheck()"></md-checkbox>
+                                </div>
+                                <div flex="10">{{item.title}}</div>
+                                <div flex="10">{{item.color}}</div>
+                                <div flex="10">{{item.author}}</div>
+                                <div flex="10">{{item.description}}</div>
+                                <div ng-click="onClick($index)">
+                                    <svg class="edit-button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 528.899 528.899" xml:space="preserve">
+<g>
+	<path d="M328.883,89.125l107.59,107.589l-272.34,272.34L56.604,361.465L328.883,89.125z M518.113,63.177l-47.981-47.981   c-18.543-18.543-48.653-18.543-67.259,0l-45.961,45.961l107.59,107.59l53.611-53.611   C532.495,100.753,532.495,77.559,518.113,63.177z M0.3,512.69c-1.958,8.812,5.998,16.708,14.811,14.565l119.891-29.069   L27.473,390.597L0.3,512.69z"/>
+</g>
+</svg>
+                                </div>
                             </div>
                         </md-list-item>
                     </md-list>

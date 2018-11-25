@@ -51,6 +51,7 @@ img {
     padding: 0 15px;
     border: 0;
     box-sizing: border-box;
+    width: 90%;
 }
 .collapse-header:hover{
     cursor: pointer;
@@ -105,6 +106,27 @@ img {
 
 input {
     color: #a50316;
+}
+
+.report-header{
+    padding-left: 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.report md-list-item{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.list-row{
+    display:flex;
+    justify-items: center;
+    align-items: center;
 }
 
 .md-raised {
