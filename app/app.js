@@ -21,9 +21,9 @@ angular.module("myApp", ['ngMaterial', "ngRoute", 'ngMessages'])
             })
         $locationProvider.html5Mode(true);
     })
-    .listen(8000, '0.0.0.0', function () {
-        console.log('Listening to port:  ' + 8000);
-    });
+    // .listen(8000, '0.0.0.0', function () {
+    //     console.log('Listening to port:  ' + 8000);
+    // });8000
 
 // function AppCtrl($scope, $location) {
 // ;

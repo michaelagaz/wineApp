@@ -108,6 +108,33 @@ input {
     color: #a50316;
 }
 
+.flex-header{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary{
+    background-color: indianred;
+    border: 1px solid firebrick;
+}
+
+.primary:hover{
+    background-color: #7b3d3d;
+}
+
+.collapsible-button{
+    box-sizing: border-box;
+    background-color: #c6c6c6;
+    height: 50px;
+}
+
+.collapsible-button:hover{
+    background-color: #a4a4a4;
+    height: 50px;
+}
+
 .report-header{
     padding-left: 16px;
     box-sizing: border-box;
@@ -139,4 +166,12 @@ input {
 
 md-toolbar {
     background-color: #a50316 !important;
+}
+
+.disabled .edit-button{
+    fill: #5a6268;
+}
+.disabled .edit-button:hover{
+    cursor: not-allowed;
+    fill: #5a6268;
 }
