@@ -12,137 +12,136 @@ app.controller('ListCtrl', ['$scope', '$location', '$http', function ($scope, $l
     // var vm = this;
 
     $scope.init = function () {
-        // $scope.confItems= [{
-        //     name: 'Farba', value: 0
-        // },
-        //     {
-        //         name: 'Vona', value: 0
-        //     },
-        //     {
-        //         name: 'Chut', value: 0
-        //     }]
-        //
-        // $scope.items = [{
-        //     id: 1,
-        //     list:
-        //         [{
-        //             checked: false,
-        //             color: "red",
-        //             author: "Blaho",
-        //             title: "title1",
-        //             description: "desc 1",
-        //             disabled: false
-        //         },
-        //             {
-        //                 checked: true,
-        //                 color: "red",
-        //                 author: "Blaho",
-        //                 title: "title2",
-        //                 description: "desc 2",
-        //                 disabled: false
-        //             },
-        //             {
-        //                 checked: true,
-        //                 color: "red",
-        //                 author: "Blaho",
-        //                 title: "title3",
-        //                 description: "desc 3",
-        //                 disabled: false
-        //             },
-        //             {
-        //                 checked: true,
-        //                 color: "red",
-        //                 author: "Blaho",
-        //                 title: "title4",
-        //                 description: "desc 4",
-        //                 disabled: false
-        //             },
-        //             {
-        //                 checked: true,
-        //                 color: "red",
-        //                 author: "Blaho",
-        //                 title: "title5",
-        //                 description: "desc 5",
-        //                 disabled: false
-        //             },
-        //             {
-        //                 checked: true,
-        //                 color: "red",
-        //                 author: "Blaho",
-        //                 title: "title6",
-        //                 description: "desc 6",
-        //                 disabled: false
-        //             },
-        //         ]
-        // },
-        //     {
-        //         id: 2,
-        //         list:
-        //             [{
-        //                 checked: false,
-        //                 color: "red",
-        //                 author: "Blaho",
-        //                 title: "title1",
-        //                 description: "desc 1",
-        //                 disabled: false
-        //             },
-        //                 {
-        //                     checked: true,
-        //                     color: "red",
-        //                     author: "Blaho",
-        //                     title: "title2",
-        //                     description: "desc 2",
-        //                     disabled: false
-        //                 },
-        //                 {
-        //                     checked: true,
-        //                     color: "red",
-        //                     author: "Blaho",
-        //                     title: "title3",
-        //                     description: "desc 3",
-        //                     disabled: false
-        //                 },
-        //                 {
-        //                     checked: true,
-        //                     color: "red",
-        //                     author: "Blaho",
-        //                     title: "title4",
-        //                     description: "desc 4",
-        //                     disabled: false
-        //                 },
-        //                 {
-        //                     checked: true,
-        //                     color: "red",
-        //                     author: "Blaho",
-        //                     title: "title5",
-        //                     description: "desc 5",
-        //                     disabled: false
-        //                 },
-        //                 {
-        //                     checked: true,
-        //                     color: "red",
-        //                     author: "Blaho",
-        //                     title: "title6",
-        //                     description: "desc 6",
-        //                     disabled: false
-        //                 },
-        //             ]
-        //     }
-        // ];
-        //
-        // $scope.allItems = [];
-        // $scope.items.forEach(function (item) {
-        //     $scope.allItems = $scope.allItems.concat(item.list);
-        // });
-        $http.get('api/').
-        then(function(response) {
-            // this callback will be called asynchronously
-            // when the response is available
-            console.log(response);
-        }, function(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
+         $scope.confItems= [{
+             name: 'Farba', value: 0
+         },
+             {
+                 name: 'Vona', value: 0
+             },
+             {
+                 name: 'Chut', value: 0
+             }]
+
+         $scope.items = [{
+             id: 1,
+             list:
+                 [{
+                     checked: false,
+                     color: "red",
+                     author: "Blaho",
+                     title: "title1",
+                     description: "desc 1",
+                     disabled: false
+                 },
+                     {
+                         checked: true,
+                         color: "red",
+                         author: "Blaho",
+                         title: "title2",
+                         description: "desc 2",
+                         disabled: false
+                     },
+                     {
+                         checked: true,
+                         color: "red",
+                         author: "Blaho",
+                         title: "title3",
+                         description: "desc 3",
+                         disabled: false
+                     },
+                     {
+                         checked: true,
+                         color: "red",
+                         author: "Blaho",
+                         title: "title4",
+                         description: "desc 4",
+                         disabled: false
+                     },
+                     {
+                         checked: true,
+                         color: "red",
+                         author: "Blaho",
+                         title: "title5",
+                         description: "desc 5",
+                         disabled: false
+                     },
+                     {
+                         checked: true,
+                         color: "red",
+                         author: "Blaho",
+                         title: "title6",
+                         description: "desc 6",
+                         disabled: false
+                     },
+                 ]
+         },
+             {
+                 id: 2,
+                 list:
+                     [{
+                         checked: false,
+                         color: "red",
+                         author: "Blaho",
+                         title: "title1",
+                         description: "desc 1",
+                         disabled: false
+                     },
+                         {
+                             checked: true,
+                             color: "red",
+                             author: "Blaho",
+                             title: "title2",
+                             description: "desc 2",
+                             disabled: false
+                         },
+                         {
+                             checked: true,
+                             color: "red",
+                             author: "Blaho",
+                             title: "title3",
+                             description: "desc 3",
+                             disabled: false
+                         },
+                         {
+                             checked: true,
+                             color: "red",
+                             author: "Blaho",
+                             title: "title4",
+                             description: "desc 4",
+                             disabled: false
+                         },
+                         {
+                             checked: true,
+                             color: "red",
+                             author: "Blaho",
+                             title: "title5",
+                             description: "desc 5",
+                             disabled: false
+                         },
+                         {
+                             checked: true,
+                             color: "red",
+                             author: "Blaho",
+                             title: "title6",
+                             description: "desc 6",
+                             disabled: false
+                         },
+                     ]
+             }
+         ];
+
+         $scope.allItems = [];
+         $scope.items.forEach(function (item) {
+             $scope.allItems = $scope.allItems.concat(item.list);
+         });
+//        $http.get('http://127.0.0.1:8000/api/').
+//        then(function(response) {
+//            $scope.items = response.data
+//            console.log(response);
+//        }, function(response) {
+//            // called asynchronously if an error occurs
+//            // or server returns response with an error status.
+//        });
         $scope.selectAllCheck();
     };
     $scope.selectAllCheck = function () {
